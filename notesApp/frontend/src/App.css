@@ -1,0 +1,746 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fff;
+  background-color: var(--bg);
+  overflow-x: hidden;
+}
+html{
+  overflow-x: hidden;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(30, 30, 30);
+}
+
+
+/* colors varibals */
+
+:root{
+  --bg: #161515;
+  --se-bg: #111010;
+  --th-bg: #181717;
+  --text-bg: #3C3D41;
+  --blue-text: #485894;
+  --green-text: #00FF47;
+  --profile-bg: #D9D9D9;
+  --error-color: rgb(241, 40, 40);
+  --hover-input: #4b4848;
+}
+
+input:hover{
+  outline: 2px solid #4b4848;
+}
+input:focus{
+  outline: 2px solid #4b4848;
+}
+
+
+
+/* utils */
+.noteCount{
+  color: var(--text-bg);
+}
+
+.sp_text{
+  background: rgb(99,96,156);
+  background: linear-gradient(90deg, rgba(99,96,156,1) 0%, rgba(68,130,63,1) 35%, rgba(80,136,147,1) 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.addProfilePicBtn{
+  min-width: 170px;
+}
+
+.profilePicImg{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+.ri-delete-bin-7-fill{
+  color: rgb(223, 56, 56);
+}
+
+.ri-edit-2-fill{
+  color: rgb(61, 217, 61);
+}
+
+.el-center-div{
+  min-height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.formConteiner{
+  width: 30%;
+  min-height: 350px;
+  padding: 20px 20px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--se-bg);
+}
+
+.formConteiner h3{
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.formConteiner label{
+  margin-top: 10px;
+}
+
+.formInput{
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--th-bg);
+  margin-top: 5px;
+  border: 0;
+  margin-top: 5px;
+  outline: 0;
+}
+.formInput::placeholder{
+  color: var(--text-bg);
+}
+
+
+
+.passwordInput{
+  display: flex;
+  align-items: center;
+  padding: 0px;
+  background-color: var(--th-bg);
+  margin-top: 5px;
+  border: 0;
+  margin-top: 5px;
+  outline: 0;
+  padding-right: 10px;
+}
+
+.passwordInput.formInput input{
+  flex: 1;
+  background-color: transparent;
+  border: 0;
+  height: 100%;
+  padding: 10px;
+  outline: 0;
+}
+
+.passwordInput.formInput input::placeholder{
+  color: var(--text-bg);
+}
+
+.passwordInput.formInput:focus ,
+.passwordInput.formInput:hover,
+.formInput:hover,
+.formInput:focus{
+  outline: 2px solid var(--hover-input);
+} 
+
+.error{
+  color: var(--error-color);
+}
+
+.block{
+  display: block;
+}
+
+.col{
+  display: flex;
+  flex-direction: column;
+}
+
+.flex{
+  display: flex;
+}
+
+.al-center{
+  align-items: center;
+}
+
+.js-between{
+  justify-content: space-between;
+}
+
+.js-center{
+  justify-content: center;
+}
+
+.mainContainer{
+  display: flex;
+  padding: 10px 20px;
+}
+
+.btn_black{
+  padding: 10px 20px;
+  display: flex;
+  gap: 7px;
+  width: 100%;
+  margin-top: 10px;
+  align-items: center;
+  background-color: var(--th-bg);
+}
+
+.btn_dark{
+  padding: 10px 20px;
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
+  background-color: var(--se-bg);
+}
+
+.btn_black i{
+  font-size: 20px;
+}
+
+.gap-0{
+  gap: 0px;
+}
+
+.note{
+  width: 100%;
+  background-color: var(--th-bg);
+  height: 200px;
+  cursor: pointer;
+  padding: 10px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* navbar */
+
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  background-color: var(--se-bg);
+  position: sticky;
+  top: 0;
+  padding: 0px 20px;
+  z-index: 33;
+}
+
+.navbar .logo h1{
+  font-size: 25px;
+}
+
+.navbar .serachArea{
+  height: 60%;
+  display: flex;
+  align-items: center;
+  width: 30%;
+  background-color: var(--th-bg);
+}
+
+.navbar .serachArea input{
+  flex: 1;
+  outline: 0;
+  border: 0;
+  background-color: transparent;
+  padding: 0px 10px;
+}
+
+.serachArea i{
+  font-size: 25px;
+  margin-right: 10px;
+  display: none;
+}
+
+.navbar .serachArea input::placeholder{
+  color: var(--text-bg);
+}
+
+.navbar .icons{
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  gap: 5px;
+  display: none;
+}
+/* targetting a menu icon */
+.navbar .icons .menuIcon{
+  position: relative;
+  z-index: 22;
+  transition: .3s;
+}
+
+/* side bar */
+.sideBar{
+  width: 25%;
+  position: sticky;
+  top: 120px;
+  padding: 25px 20px;
+  height: 83vh;
+  background-color: var(--se-bg);
+}
+
+.sidebarHead{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.sidebarHead .closeMenu{
+  font-size: 30px;
+  display: none;
+}
+
+.sideBar .prifileCircle{
+  width: 70px;
+  height: 70px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background-color: var(--profile-bg);
+}
+
+.sideBar .flex h3{
+  font-size: 20px;
+}
+
+.sideBar .flex p{
+  color: var(--blue-text);
+}
+
+
+.sideBar .updateToPro{
+  padding: 10px 20px;
+  gap: 7px;
+  height: 200px;
+  width: 100%;
+  margin-top: 10px;
+  background-color: var(--th-bg);
+}
+.sideBar .updateToPro h3{
+  font-size: 17px;
+  font-weight: 600;
+}
+.sideBar .updateToPro p{
+  margin-top: 5px;
+}
+
+
+.settingDropDown{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: var(--se-bg);
+  bottom: 11%;
+  left: 35%;
+  display: flex;
+  z-index: 22;
+  flex-direction: column;
+  padding: 10px 20px;
+  display: none;
+  transition: .3s;
+}
+.settingDropDown.active{
+  display: block;
+}
+
+/* grid notes and some row notes styles */
+
+.gridContainer{
+  width: 75vw;
+  padding: 10px 20px;
+  background-color: var(--se-bg);
+  margin-left: 10px;
+  position: relative;
+  height: 80vh;
+  display: grid;
+  grid-template-columns: repeat(3, 350px);
+  grid-template-rows: 200px;
+  overflow: auto;
+  gap: 20px;
+}
+
+.gridContainer .note{
+  width: 350px;
+  margin: 0;
+  height: 200px;
+  padding: 10px 10px;
+  background-color: var(--th-bg);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer; 
+  overflow: hidden;
+}
+
+.note .noteCount{
+  color: var(--text-bg);
+}
+
+.note h1{
+  font-size: 25px;
+  margin-bottom: 6px;
+}
+
+.note .noteDate{
+  color: var(--text-bg);
+  position: absolute;
+  bottom: 5%;
+}
+
+.note .noteBtns{
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 3%;
+  font-size: 20px;
+  right: 5%;
+  gap: 5px;
+}
+
+/* row notes */
+
+.rowContainer{
+  width: 75vw;
+  padding: 10px 20px;
+  /* background-color: red; */
+  background-color: var(--se-bg);
+  margin-left: 10px;
+  position: relative;
+  height: 82vh;
+  display: flex;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex-direction: column;
+}
+
+.rowContainer .note{
+  width: 100%;
+  background-color: var(--th-bg);
+  min-height: 20vh;
+  cursor: pointer;
+  padding: 10px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.note .content{
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  width: 100%;
+}
+
+.note .heading{
+  width: 90%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
+/* newNoteBtn */
+
+.newNoteBtn{
+  position: fixed;
+  bottom: 10%;
+  right: 3%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  font-size: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: var(--th-bg);
+}
+
+.modal-content{
+  background-color: var(--se-bg);
+}
+
+.modal-body .inputs{
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-body .inputs label{
+  margin-top: 10px;
+}
+
+.modal-body .inputs input,.modal-body .inputs textarea{
+  padding: 10px;
+  background-color: var(--th-bg);
+  margin-top: 5px;
+  border: 0;
+  outline: 0;
+}
+
+.modal-body .inputs input:hover,.modal-body .inputs textarea:hover{
+  outline: 2px solid var(--hover-input);
+}
+.modal-body .inputs input:focus,.modal-body .inputs textarea:focus{
+  outline: 2px solid var(--hover-input);
+}
+
+
+
+.modal-body .inputs textarea{
+  min-height: 200px;
+}
+.modal-body .inputs input::placeholder,.modal-body .inputs textarea::placeholder{
+  color: var(--text-bg);
+}
+
+/* searchPage */
+
+.searchPage{
+  width: 90%;
+  margin: auto;
+  min-height: calc(100vh - 100px);
+  padding: 10px 0px;
+}
+
+.searchPage h1{
+  font-weight: 400;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.searchPage .searchResult.note{
+  width: 100%;
+  height: 120px;
+  padding: 10px 20px;
+  position: relative;
+  cursor: pointer;
+  background-color: var(--se-bg);
+}
+
+
+.searchPage .searchResult .noteBtns{
+  margin-bottom: 10px;
+}
+
+.searchPage .searchResult.note p{
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}
+
+.searchPage .searchResult.note h2{
+  margin-bottom: 10px;
+  font-size: 30px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}
+
+.searchPage h1{
+  font-size: 35px;
+}
+
+/* profile */
+
+.profile{
+  width: 95%;
+  margin: auto;
+  min-height: calc(100vh - 100px);
+  padding-top: 20px;
+}
+.profile .flex{
+  margin-top: 40px;
+  gap: 30px;
+}
+.profile .flex .profilePic{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: var(--profile-bg);
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.profile .flex .profilePic .addPic{
+  position: absolute;
+  opacity: 0;
+  transition: all linear .3s;
+  bottom: -100%;
+  display: flex;
+  color: black;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.profile .flex .profilePic:hover .addPic{
+  opacity: 1;
+  bottom: 25%;
+}
+
+.profile .flex .block h3{
+  font-size: 25px;
+}
+.profile .flex .block p{
+  font-size: 19px;
+}
+.profile .flex .block p span{
+  color: var(--green-text);
+}
+
+.profile .yourNotesHead h3{
+  font-size: 25px;
+  margin-top: 20px;
+}
+
+.profile .yourNotes{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 350px);
+  /* grid-template-columns: auto auto auto auto; */
+  gap: 10px;
+  margin-top: 20px;
+  height: auto;
+}
+
+.profile .yourNotes .note{
+  width: 350px;
+  background-color: var(--se-bg);
+}
+
+/* single note page */
+
+.singleNote{
+  width: 95%;
+  min-height: 80vh;
+  margin: auto;
+  background-color: var(--se-bg);
+  padding: 20px 20px;
+  margin-top: 15px;
+  position: relative;
+}
+.singleNote h1{
+  font-size: 30px;
+}
+.singleNote .noteDate{
+  color: var(--text-bg);
+  margin-top: 5px;
+}
+
+.singleNote .singleNoteContent{
+  margin-top: 40px;
+}
+
+.singleNote .noteBtns{
+  position: absolute;
+  right: 5%;
+  font-size: 20px;
+  top: 10%;
+}
+.singleNote .noteBtns i{
+  cursor: pointer;
+  margin-left: 7px;
+}
+
+
+
+/* edit note page */
+
+.editNoteContainer{
+  min-height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.editNoteContainer .editNoteForm{
+  width: 35vw;
+  min-height: 65vh;
+  padding: 20px 20px;
+  background-color: var(--se-bg);
+  display: flex;
+  flex-direction: column;
+}
+
+.editNoteContainer .editNoteForm label{
+  color: var(--text-bg);
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.editNoteContainer .editNoteForm input , .editNoteContainer .editNoteForm textarea{
+  padding: 10px;
+  outline: 0;
+  border: 0;
+  background-color: var(--th-bg);
+}
+
+.editNoteContainer .editNoteForm input:hover , .editNoteContainer .editNoteForm textarea:hover{
+  outline: 2px solid var(--hover-input);
+}
+
+.editNoteContainer .editNoteForm textarea{
+  min-height: 250px;
+}
+
+
+.editNoteContainer .editNoteForm input::placeholder , .editNoteContainer .editNoteForm textarea::placeholder{
+  color: var(--text-bg);
+}
+
+
+/* important notes page styles */
+
+.impNotes{
+  min-height: calc(100vh - 100px);
+  width: 90%;
+  margin: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.impNotes .gridContainer{
+  background-color: transparent;
+  margin-top: 20px;
+  padding: 0px;
+  width: 100%;
+}
+
+.impNotes .gridContainer .note{
+  background-color: var(--se-bg);
+}
+
+.noNotesDiv .btn_dark{
+  width: 35%;
+}
+

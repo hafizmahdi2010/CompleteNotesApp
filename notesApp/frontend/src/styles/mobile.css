@@ -1,0 +1,131 @@
+@media (max-width:600px) {
+  /* colors varibals */
+
+  :root {
+    --bg: #161515;
+    --se-bg: #111010;
+    --th-bg: #181717;
+    --text-bg: #3C3D41;
+    --blue-text: #485894;
+    --green-text: #00601B;
+    --profile-bg: #D9D9D9;
+  }
+
+  .addProfilePicBtn{
+    min-width: 150px;
+  }
+
+  .mainContainer {
+    padding: 0px;
+  }
+
+  .gridContainer {
+    grid-template-columns: repeat(1, 100%);
+    grid-template-rows: 210px 210px;
+    margin: 0px;
+    margin-left: 0px;
+    background-color: var(--th-bg);
+  }
+
+  .gridContainer .note {
+    height: 220px;
+    background-color: var(--se-bg);
+  }
+
+  .navbar .serachArea {
+    position: absolute;
+    width: 88vw;
+    visibility: hidden;
+  }
+
+  .navbar .serachArea.active {
+    visibility: visible;
+    z-index: 23;
+  }
+
+  .navbar .icons {
+    display: block;
+  }
+
+  .serachArea i {
+    display: block;
+  }
+
+  /* new note btn */
+  .newNoteBtn {
+    bottom: 5%;
+  }
+
+  /* profile */
+  .profile .yourNotes {
+    grid-template-columns: auto;
+  }
+
+  .profile .btn_dark {
+    font-size: 14px;
+  }
+
+  .profile .flex .profilePic {
+    width: 70px;
+    height: 70px;
+  }
+
+  .profilePicImg {
+    width: 70px;
+    height: 70px;
+  }
+
+  .profile .flex {
+    gap: 15px;
+  }
+
+  .yourNotesHead {
+    margin-top: 0px;
+    flex-direction: column-reverse;
+  }
+
+  .profile .flex.al-center:first-child {
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .profile .flex.al-center {
+    margin-top: 0px;
+    align-items: flex-start;
+  }
+
+  .profile .flex .block h3 {
+    font-size: 19px;
+  }
+
+  .profile .flex .block p {
+    font-size: 13px;
+  }
+
+  .profile .flex.al-center button {
+    width: 46vw;
+  }
+
+  .formConteiner {
+    width: 95vw;
+  }
+
+  /* noNotesDiv */
+  .noNotesDiv{
+    height: calc(100vh - 100px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .noNotesDiv .btn_dark{
+    width: 95%;
+  }
+
+  /* search page */
+  .searchPage h1{
+    font-size: 23px;
+  }
+  
+}

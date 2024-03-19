@@ -1,0 +1,123 @@
+@media (max-width:1064px) {
+  /* colors varibals */
+
+  :root {
+    --bg: #161515;
+    --se-bg: #111010;
+    --th-bg: #181717;
+    --text-bg: #3C3D41;
+    --blue-text: #485894;
+    --green-text: #00601B;
+    --profile-bg: #D9D9D9;
+  }
+
+  .navbar{
+    z-index: 0;
+  }
+
+  .mainContainer {
+    padding: 0px;
+  }
+
+  .gridContainer {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: 0px;
+    height: calc(100vh - 100px);
+  }
+
+  .gridContainer .note {
+    width: 100%;
+  }
+
+  .sideBar {
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    z-index: 447;
+    left: 0px;
+    z-index: 21;
+    transition: .3s;
+    background-color: var(--se-bg);
+    transform: translateX(-100vw);
+    margin-right: 0px;
+    margin: 0px;
+    height: 100vh;
+  }
+
+  .sidebarHead .closeMenu{
+    display: block;
+  }
+
+  .sideBar.active {
+    transform: translateX(0vw);
+  }
+
+
+  .navbar .serachArea {
+    position: absolute;
+    width: 88vw;
+    visibility: hidden;
+  }
+
+  .navbar .serachArea.active {
+    visibility: visible;
+    z-index: 23;
+  }
+
+  .navbar .icons {
+    display: block;
+  }
+
+  .serachArea i {
+    display: block;
+  }
+
+  /* profile */
+  .profile .yourNotes {
+    grid-template-columns: auto auto auto;
+  }
+
+  .profile .yourNotes .note {
+    width: 100%;
+  }
+
+  /* search page */
+  .searchPage h1 {
+    font-size: 27px;
+  }
+
+  .searchPage .searchResult {
+    height: 189px;
+  }
+
+  .searchPage .searchResult h2 {
+    font-size: 25px;
+  }
+
+  /* edit note page */
+  .editNoteContainer .editNoteForm{
+   width: 95vw;
+  }
+
+  .formConteiner{
+    width: 45vw;
+  }
+
+
+  /* row notes */
+
+  .rowContainer{
+    width: 100vw;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: calc(100vh - 100px);
+    background-color: var(--th-bg);
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .rowContainer .note{
+    background-color: var(--se-bg);
+  }
+}
